@@ -3,7 +3,7 @@ extends StaticBody2D
 signal hole_hit
 
 var hole_area
-var hole_radius = 10
+var hole_radius = 7
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	hole_area = [
