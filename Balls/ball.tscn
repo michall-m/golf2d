@@ -79,6 +79,14 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yai4f")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yai4f")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vl33q")
@@ -129,8 +137,8 @@ animations = [{
 "texture": SubResource("AtlasTexture_acwj0")
 }],
 "loop": true,
-"name": &"default",
-"speed": 5.0
+"name": &"run",
+"speed": 30.0
 }]
 
 [node name="Ball" type="RigidBody2D"]
@@ -142,3 +150,4 @@ shape = SubResource("CircleShape2D_ssep1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6epr1")
+animation = &"idle"
