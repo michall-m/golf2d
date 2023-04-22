@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://lipk210g5t8f"]
+
+[ext_resource type="Script" path="res://Holes/hole.gd" id="1_d6ovx"]
+[ext_resource type="Texture2D" uid="uid://2318i8debn5n" path="res://Art/Golf/hole_stick_right.png" id="1_nhwmb"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v2s6f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ixbuq"]
+size = Vector2(2, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sal0m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_nhwmb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Hole" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_v2s6f")
+script = ExtResource("1_d6ovx")
+
+[node name="HoleCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_ixbuq")
+disabled = true
+
+[node name="HoleAnimation" type="AnimatedSprite2D" parent="."]
+position = Vector2(-7, -16)
+sprite_frames = SubResource("SpriteFrames_sal0m")
+centered = false

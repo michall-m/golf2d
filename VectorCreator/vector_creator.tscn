@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvngvg7b3c65q"]
+
+[ext_resource type="Script" path="res://VectorCreator.gd" id="1_b7a0s"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_b7k1h"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jovyh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_44vos"]
+size = Vector2(999.25, 556)
+
+[node name="VectorCreator" type="Area2D"]
+material = SubResource("CanvasItemMaterial_b7k1h")
+script = ExtResource("1_b7a0s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 17
+visibility_layer = 17
+z_index = 7
+material = SubResource("CanvasItemMaterial_jovyh")
+shape = SubResource("RectangleShape2D_44vos")
+debug_color = Color(0, 0.6, 0.701961, 1)

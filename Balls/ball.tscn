@@ -1,0 +1,144 @@
+[gd_scene load_steps=22 format=3 uid="uid://bqoix4nnvvrd2"]
+
+[ext_resource type="Texture2D" uid="uid://bnixkdwssdaxb" path="res://Art/Free/Items/Fruits/Orange.png" id="1_6dqol"]
+[ext_resource type="Script" path="res://Balls/ball.gd" id="1_oe1wt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ssep1"]
+radius = 6.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yai4f"]
+atlas = ExtResource("1_6dqol")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vl33q"]
+atlas = ExtResource("1_6dqol")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nal6l"]
+atlas = ExtResource("1_6dqol")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22fc4"]
+atlas = ExtResource("1_6dqol")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pv3ye"]
+atlas = ExtResource("1_6dqol")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xt5j6"]
+atlas = ExtResource("1_6dqol")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2oss"]
+atlas = ExtResource("1_6dqol")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxux0"]
+atlas = ExtResource("1_6dqol")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n32e3"]
+atlas = ExtResource("1_6dqol")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j435h"]
+atlas = ExtResource("1_6dqol")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bva7k"]
+atlas = ExtResource("1_6dqol")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dn0at"]
+atlas = ExtResource("1_6dqol")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6teq"]
+atlas = ExtResource("1_6dqol")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_la5ob"]
+atlas = ExtResource("1_6dqol")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwdem"]
+atlas = ExtResource("1_6dqol")
+region = Rect2(448, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7ktv"]
+atlas = ExtResource("1_6dqol")
+region = Rect2(480, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acwj0"]
+atlas = ExtResource("1_6dqol")
+region = Rect2(512, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6epr1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yai4f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vl33q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nal6l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22fc4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pv3ye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xt5j6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2oss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxux0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n32e3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j435h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bva7k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dn0at")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6teq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_la5ob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwdem")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7ktv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_acwj0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Ball" type="RigidBody2D"]
+script = ExtResource("1_oe1wt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+shape = SubResource("CircleShape2D_ssep1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6epr1")
