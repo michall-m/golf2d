@@ -17,7 +17,7 @@ func _on_hole_hole_hit():
 
 func launch(impulse: Vector2):
 	ball_hit.emit()
-	apply_central_impulse(3 * impulse)
+	apply_central_impulse(5 * impulse)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

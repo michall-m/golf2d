@@ -2,7 +2,7 @@ extends Area2D
 
 signal vector_created(vector)
 
-@export var maximum_length = 200
+@export var maximum_length = 120
 
 var touch_down := false
 var can_procces_vector := false
@@ -18,7 +18,7 @@ func _ready() -> void:
 
 func _draw() -> void:
 	draw_line(ball_position - global_position,
-		ball_position - global_position - vector,
+		ball_position - global_position + position_end - position_start,
 		Color.GREEN, 
 		8)
 	draw_line(ball_position - global_position, 
