@@ -488,7 +488,7 @@ position = Vector2(87, 173)
 [node name="VectorCreator" parent="." instance=ExtResource("4_3tcpu")]
 show_behind_parent = true
 light_mask = 256
-position = Vector2(667, 378)
+position = Vector2(-2, -3)
 
 [node name="Ball" parent="." instance=ExtResource("5_6ljpj")]
 position = Vector2(134, 187)

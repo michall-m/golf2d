@@ -8,6 +8,7 @@ var touch_down := false
 var can_procces_vector := false
 var position_start := Vector2.ZERO
 var position_end := Vector2.ZERO
+var ball_position := Vector2.ZERO
 
 var vector := Vector2.ZERO
 
@@ -16,13 +17,12 @@ func _ready() -> void:
 
 
 func _draw() -> void:
-	draw_line(position_start - global_position, 
-		(position_end - global_position), 
-		Color.BLUE, 
+	draw_line(ball_position - global_position,
+		ball_position - global_position - vector,
+		Color.GREEN, 
 		8)
-	
-	draw_line(position_start - global_position, 
-		position_start - global_position + vector, 
+	draw_line(ball_position - global_position, 
+		ball_position - global_position + vector,
 		Color.RED, 
 		16)
 
@@ -39,7 +39,7 @@ func change_can_create_vector():
 	can_procces_vector = !can_procces_vector
 	
 func set_new_position(new_position: Vector2):
-	get_node(".").set_global_position(new_position)
+	ball_position = new_position
 
 func _input(event) -> void:
 	if not can_procces_vector:

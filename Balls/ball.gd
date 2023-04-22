@@ -24,6 +24,5 @@ func _process(delta):
 	ball_position.emit(global_position)
 	emit_signal("ball_position", global_position)
 	if get_node(".").is_sleeping():
-		print("x", position, global_position)
 		stable_ball_position.emit(global_position)
 

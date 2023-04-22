@@ -7,7 +7,7 @@
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jovyh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_44vos"]
-size = Vector2(999.25, 556)
+size = Vector2(1153.62, 638)
 
 [node name="VectorCreator" type="Area2D"]
 material = SubResource("CanvasItemMaterial_b7k1h")
@@ -18,5 +18,6 @@ light_mask = 17
 visibility_layer = 17
 z_index = 7
 material = SubResource("CanvasItemMaterial_jovyh")
+position = Vector2(576.188, 324)
 shape = SubResource("RectangleShape2D_44vos")
 debug_color = Color(0, 0.6, 0.701961, 1)
