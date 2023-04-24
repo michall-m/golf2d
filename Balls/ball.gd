@@ -10,7 +10,7 @@ signal stable_ball_position(position: Vector2)
 func _ready():
 	var physics = PhysicsMaterial.new()
 	physics.set_bounce(0.7)
-	physics.set_friction(0.25)
+	physics.set_friction(0)
 	set_physics_material_override(physics)
 
 func _on_hole_hole_hit():
