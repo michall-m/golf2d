@@ -16,10 +16,6 @@ config/features=PackedStringArray("4.0", "Mobile")
 config/icon="res://icon.svg"
 run/vector_creator=false
 
-[display]
-
-window/stretch/scale=1.5
-
 [input]
 
 ui_accept={
