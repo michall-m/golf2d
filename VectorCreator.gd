@@ -9,6 +9,7 @@ var can_procces_vector := false
 var position_start := Vector2.ZERO
 var position_end := Vector2.ZERO
 var ball_position := Vector2.ZERO
+var golfer_position := Vector2.ZERO
 
 var vector := Vector2.ZERO
 
@@ -38,11 +39,14 @@ func change_can_create_vector():
 	print(can_procces_vector)
 	can_procces_vector = !can_procces_vector
 	
-func set_new_position(new_position: Vector2):
+func set_ball_position(new_position: Vector2):
 	ball_position = new_position
+	
+func set_golfer_position(new_position: Vector2):
+	golfer_position = new_position
 
 func _input(event) -> void:
-	if not can_procces_vector:
+	if not can_procces_vector or !is_golfer_close_to_ball():
 		return
 		
 	if event.is_action_released("ui_touch"):
@@ -59,9 +63,13 @@ func _input(event) -> void:
 		
 		queue_redraw()
 
+func is_golfer_close_to_ball():
+	if golfer_position.distance_to(ball_position) <= 28:
+		return true
+	return false
 
 func _on_input_event(_viewport, event, _shape_idx) -> void:
-	if not can_procces_vector:
+	if not can_procces_vector or !is_golfer_close_to_ball():
 		return
 	
 	if event.is_action_pressed("ui_touch"):
