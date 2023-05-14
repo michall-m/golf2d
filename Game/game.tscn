@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dsi4whdx5brny"]
+[gd_scene load_steps=11 format=3 uid="uid://dsi4whdx5brny"]
 
 [ext_resource type="Texture2D" uid="uid://duvragfrducip" path="res://Art/Free/Background/Pink.png" id="1_ahk82"]
 [ext_resource type="PackedScene" uid="uid://cp6nvxck7b10n" path="res://Chars/golfer.tscn" id="1_cc0bk"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bqoix4nnvvrd2" path="res://Balls/ball.tscn" id="3_vye1u"]
 [ext_resource type="Script" path="res://Levels/Control.gd" id="4_x6a3v"]
 [ext_resource type="PackedScene" uid="uid://lipk210g5t8f" path="res://Holes/hole.tscn" id="5_qexfe"]
+[ext_resource type="Script" path="res://Game/Camera2D.gd" id="8_yma0k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s57ju"]
 texture = ExtResource("2_66t1j")
@@ -685,6 +686,7 @@ position = Vector2(120, 124)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(47, 624)
+script = ExtResource("8_yma0k")
 
 [connection signal="vector_created" from="VectorCreator" to="Ball" method="launch"]
 [connection signal="golfer_position" from="Golfer" to="VectorCreator" method="set_golfer_position"]
@@ -693,3 +695,4 @@ position = Vector2(47, 624)
 [connection signal="sleeping_state_changed" from="Ball" to="VectorCreator" method="change_can_create_vector"]
 [connection signal="stable_ball_position" from="Ball" to="VectorCreator" method="set_ball_position"]
 [connection signal="hole_hit" from="Hole" to="Ball" method="_on_hole_hole_hit"]
+[connection signal="camera_position" from="Camera2D" to="Control" method="set_pos"]
